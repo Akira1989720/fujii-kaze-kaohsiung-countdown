@@ -6,6 +6,10 @@
   <meta name="theme-color" content="#d4ab63" />
   <meta name="description" content="2026 藤井風高雄演唱會：公開售票與演出時間雙倒數。" />
   <title>藤井風高雄演唱會倒數｜Fujii Kaze Prema World Tour</title>
+  <!-- revised: sans headings + Google Calendar + share modal | 2026-06-13 v5 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;600;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --paper: #f8f1e5;
@@ -24,6 +28,9 @@
       --line-strong: rgba(111, 73, 43, 0.34);
       --shadow: 0 18px 48px rgba(86, 57, 36, 0.16);
       --shadow-soft: 0 10px 32px rgba(86, 57, 36, 0.11);
+      --block-bg: #fff8ec;
+      --title-serif: "Noto Serif TC", "Songti TC", "PMingLiU", "MingLiU", serif;
+      --title-sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", "Helvetica Neue", Arial, sans-serif;
     }
 
     * { box-sizing: border-box; }
@@ -38,7 +45,7 @@
         radial-gradient(circle at 90% 18%, rgba(218, 176, 96, 0.38), transparent 28rem),
         radial-gradient(circle at 82% 90%, rgba(169, 99, 63, 0.24), transparent 30rem),
         linear-gradient(135deg, #e8c985 0%, #d7ae68 48%, #bf8654 100%);
-      font-family: "Iowan Old Style", "Noto Serif TC", "Songti TC", "PingFang TC", "Microsoft JhengHei", serif;
+      font-family: var(--title-serif);
     }
 
     body::before {
@@ -157,22 +164,11 @@
       padding: clamp(1.4rem, 3vw, 1.9rem);
       border: 1px solid rgba(120, 75, 53, 0.22);
       border-radius: 1rem;
-      background: rgba(255, 250, 242, 0.91);
+      background: var(--block-bg);
       box-shadow: var(--shadow);
       backdrop-filter: blur(15px);
     }
 
-    .countdown-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto;
-      height: 0.34rem;
-      background: linear-gradient(90deg, var(--terracotta), var(--honey));
-    }
-
-    .countdown-card[data-target="concert"]::before {
-      background: linear-gradient(90deg, var(--olive), var(--honey-soft));
-    }
 
     .card-kicker {
       display: inline-flex;
@@ -198,10 +194,16 @@
 
     .countdown-card h2 {
       margin: 1rem 0 0;
+    }
+
+    .countdown-card h2,
+    .detail-card h3 span {
       color: var(--brown);
-      font-size: clamp(1.62rem, 3vw, 2.2rem);
-      font-weight: 600;
-      letter-spacing: 0.04em;
+      font-family: var(--title-sans);
+      font-size: clamp(1.5rem, 2.7vw, 1.95rem);
+      font-weight: 700;
+      letter-spacing: 0.075em;
+      line-height: 1.42;
     }
 
     .datetime {
@@ -284,10 +286,19 @@
       gap: 0.7rem;
       margin-top: 1rem;
       padding: 0.85rem;
-      border: 1px solid rgba(94, 63, 45, 0.24);
+      border: 1px solid rgba(113, 75, 51, 0.2);
       border-radius: 0.78rem;
-      background: rgba(84, 57, 43, 0.9);
+      background: var(--block-bg);
       box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+    }
+
+    /* Main content blocks intentionally share the same pale paper tone. */
+    .countdown-card,
+    .action-panel,
+    .detail-card,
+    .wind-card {
+      background: var(--block-bg);
     }
 
     .button,
@@ -323,9 +334,9 @@
 
     .button-secondary,
     .calendar-summary {
-      color: var(--paper);
-      border-color: rgba(250, 228, 185, 0.34);
-      background: rgba(255, 250, 242, 0.06);
+      color: var(--brown);
+      border-color: rgba(121, 80, 56, 0.28);
+      background: rgba(245, 227, 198, 0.36);
     }
 
     .calendar-wrap { position: relative; }
@@ -354,6 +365,7 @@
       background: transparent;
       text-align: left;
       cursor: pointer;
+      text-decoration: none;
       transition: background 160ms ease;
     }
 
@@ -391,18 +403,11 @@
       padding: 1.5rem 1.55rem;
       border: 1px solid rgba(113, 75, 51, 0.2);
       border-radius: 0.86rem;
-      background: rgba(255, 250, 242, 0.91);
+      background: var(--block-bg);
       box-shadow: var(--shadow-soft);
       backdrop-filter: blur(12px);
     }
 
-    .detail-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 0.28rem;
-      background: linear-gradient(180deg, var(--terracotta), var(--honey));
-    }
 
     .detail-card h3 {
       margin: 0 0 1rem;
@@ -417,11 +422,6 @@
     .detail-card h3 span {
       display: block;
       margin-top: 0.28rem;
-      color: var(--brown);
-      font-family: "Iowan Old Style", "Noto Serif TC", "Songti TC", "PingFang TC", serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      letter-spacing: 0.09em;
       text-transform: none;
     }
 
@@ -448,31 +448,138 @@
     }
 
     .wind-card {
-      border-color: rgba(80, 56, 44, 0.3);
-      background: linear-gradient(145deg, rgba(88, 60, 45, 0.96), rgba(66, 49, 39, 0.96));
+      border-color: rgba(113, 75, 51, 0.2);
+      background: var(--block-bg);
     }
 
-    .wind-card::before { background: linear-gradient(180deg, var(--honey-soft), var(--ochre)); }
-    .wind-card h3 { color: var(--honey-soft); }
-    .wind-card h3 span { color: var(--paper); }
+    .wind-card h3 { color: var(--olive); }
+    .wind-card h3 span { color: var(--brown); }
 
     .tip {
       margin: 0;
-      color: rgba(255, 246, 225, 0.84);
+      color: rgba(79, 59, 48, 0.86);
       font-size: 0.9rem;
       letter-spacing: 0.04em;
       line-height: 1.95;
     }
 
-    .tip strong { color: var(--honey-soft); }
+    .tip strong { color: var(--terracotta); }
 
-    .wind-signoff {
-      display: block;
-      margin-top: 1rem;
-      color: rgba(238, 209, 158, 0.82);
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
+
+
+    .share-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 40;
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+      background: rgba(48, 36, 29, 0.48);
+      backdrop-filter: blur(8px);
     }
+
+    .share-overlay[hidden] { display: none; }
+
+    .share-dialog {
+      position: relative;
+      width: min(34rem, 100%);
+      padding: 1.35rem;
+      border: 1px solid rgba(113, 75, 51, 0.24);
+      border-radius: 0.88rem;
+      background: var(--block-bg);
+      box-shadow: var(--shadow);
+    }
+
+    .share-close {
+      position: absolute;
+      top: 0.72rem;
+      right: 0.76rem;
+      display: grid;
+      width: 2rem;
+      height: 2rem;
+      place-items: center;
+      border: 1px solid rgba(121, 80, 56, 0.2);
+      border-radius: 999px;
+      color: var(--brown);
+      background: transparent;
+      font-family: var(--title-sans);
+      font-size: 1.08rem;
+      cursor: pointer;
+    }
+
+    .share-kicker {
+      margin: 0;
+      color: var(--terracotta);
+      font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .share-dialog h2 {
+      margin: 0.35rem 0 0;
+      color: var(--brown);
+      font-family: var(--title-sans);
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    .share-description {
+      margin: 0.68rem 0 1rem;
+      color: rgba(79, 59, 48, 0.82);
+      font-size: 0.84rem;
+      line-height: 1.75;
+    }
+
+    .share-url-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 0.5rem;
+    }
+
+    .share-url {
+      min-width: 0;
+      min-height: 2.85rem;
+      padding: 0.62rem 0.72rem;
+      border: 1px solid rgba(121, 80, 56, 0.25);
+      border-radius: 0.42rem;
+      color: var(--brown);
+      background: rgba(245, 227, 198, 0.42);
+      font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.76rem;
+      line-height: 1.5;
+    }
+
+    .share-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .share-link {
+      display: inline-flex;
+      min-height: 2.78rem;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 0.82rem;
+      border: 1px solid rgba(121, 80, 56, 0.24);
+      border-radius: 0.42rem;
+      color: var(--brown);
+      background: rgba(245, 227, 198, 0.34);
+      font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: transform 180ms ease, background 180ms ease;
+    }
+
+    .share-link:hover { transform: translateY(-2px); background: rgba(232, 201, 137, 0.34); }
 
     footer {
       display: flex;
@@ -556,6 +663,7 @@
       .detail-card li { grid-template-columns: 4.5rem 1fr; font-size: 0.83rem; }
       footer { display: block; }
       footer #updatedAt { display: block; margin-top: 0.28rem; }
+      .share-url-row, .share-links { grid-template-columns: 1fr; }
       .toast { width: calc(100% - 1.4rem); border-radius: 0.8rem; }
     }
   </style>
@@ -621,14 +729,14 @@
       <details class="calendar-wrap" id="calendarMenu">
         <summary class="calendar-summary">加入行事曆 ↓</summary>
         <div class="calendar-menu" role="menu" aria-label="選擇要加入行事曆的時間">
-          <button class="calendar-option" type="button" data-calendar-key="ticket" role="menuitem">
+          <a class="calendar-option" href="#" data-calendar-key="ticket" role="menuitem" target="_blank" rel="noopener noreferrer">
             <strong>加入公開售票提醒</strong>
-            <span>2026.06.20 SAT · 12:00 PM</span>
-          </button>
-          <button class="calendar-option" type="button" data-calendar-key="concert" role="menuitem">
+            <span>Google Calendar · 2026.06.20 SAT · 12:00 PM</span>
+          </a>
+          <a class="calendar-option" href="#" data-calendar-key="concert" role="menuitem" target="_blank" rel="noopener noreferrer">
             <strong>加入演唱會行程</strong>
-            <span>2026.10.31 SAT · 07:00 PM</span>
-          </button>
+            <span>Google Calendar · 2026.10.31 SAT · 07:00 PM</span>
+          </a>
         </div>
       </details>
       <button class="button button-secondary" type="button" id="shareBtn">分享倒數</button>
@@ -647,14 +755,13 @@
       <article class="detail-card wind-card">
         <h3>Before The Wind Arrives<span>在風抵達之前</span></h3>
         <p class="tip"><strong>搶票提醒：</strong>先完成 KKTIX 會員、手機號碼與電子郵件驗證。啟售當天不建議同時開啟多個裝置、瀏覽器或分頁，以免購票流程異常。</p>
-        <span class="wind-signoff">準備好，再讓好運順著風來。</span>
       </article>
     </section>
 
     <footer>
       <div>
         <span>Unofficial countdown page · Event information linked to KKLIVE / KKTIX</span>
-        <span class="copyright">copyright / akira1989720</span>
+        <span class="copyright">copyright / akira1989720 · v5</span>
       </div>
       <span id="updatedAt"></span>
     </footer>
@@ -662,7 +769,27 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+  <div class="share-overlay" id="shareModal" hidden>
+    <section class="share-dialog" role="dialog" aria-modal="true" aria-labelledby="shareTitle">
+      <button class="share-close" type="button" id="shareClose" aria-label="關閉分享視窗">×</button>
+      <p class="share-kicker">Share Countdown</p>
+      <h2 id="shareTitle">分享倒數</h2>
+      <p class="share-description">複製網址，或將倒數頁直接分享至 LINE 與 Threads。</p>
+      <div class="share-url-row">
+        <input class="share-url" id="shareUrl" type="text" readonly value="https://akira1989720.github.io/fujii-kaze-kaohsiung-countdown/" aria-label="倒數頁網址" />
+        <button class="button button-primary" type="button" id="copyUrlBtn">複製網址</button>
+      </div>
+      <div class="share-links">
+        <a class="share-link" id="lineShareLink" href="#" target="_blank" rel="noopener noreferrer">分享到 LINE ↗</a>
+        <a class="share-link" id="threadsShareLink" href="#" target="_blank" rel="noopener noreferrer">分享到 Threads ↗</a>
+      </div>
+    </section>
+  </div>
+
   <script>
+    const PUBLISHED_URL = 'https://akira1989720.github.io/fujii-kaze-kaohsiung-countdown/';
+    const SHARE_TEXT = '藤井風高雄演唱會倒數｜公開售票：2026.06.20 12:00｜演出：2026.10.31 19:00';
+
     const events = {
       ticket: new Date('2026-06-20T12:00:00+08:00'),
       concert: new Date('2026-10-31T19:00:00+08:00')
@@ -670,8 +797,6 @@
 
     const calendarEvents = {
       ticket: {
-        uid: 'fujii-kaze-kaohsiung-ticket-sale-20260620@akira1989720',
-        filename: 'fujii-kaze-kaohsiung-ticket-sale-reminder.ics',
         startUtc: '20260620T040000Z',
         endUtc: '20260620T043000Z',
         summary: '藤井風高雄演唱會｜公開售票提醒',
@@ -679,8 +804,6 @@
         description: 'Fujii Kaze Prema World Tour 高雄場公開售票。售票平台：KKTIX、全家便利商店 FamiPort。'
       },
       concert: {
-        uid: 'fujii-kaze-kaohsiung-concert-20261031@akira1989720',
-        filename: 'fujii-kaze-kaohsiung-concert.ics',
         startUtc: '20261031T110000Z',
         endUtc: '20261031T140000Z',
         summary: '藤井風 Prema World Tour｜高雄場',
@@ -733,54 +856,24 @@
         hour: '2-digit', minute: '2-digit', hour12: false
       }).format(new Date())}`;
 
-    function escapeICS(value) {
-      return String(value)
-        .replace(/\\/g, '\\\\')
-        .replace(/\n/g, '\\n')
-        .replace(/,/g, '\\,')
-        .replace(/;/g, '\\;');
+    function buildGoogleCalendarUrl(event) {
+      const params = new URLSearchParams({
+        action: 'TEMPLATE',
+        text: event.summary,
+        dates: `${event.startUtc}/${event.endUtc}`,
+        details: event.description,
+        location: event.location,
+        ctz: 'Asia/Taipei'
+      });
+      return `https://calendar.google.com/calendar/render?${params.toString()}`;
     }
 
-    function createICS(event) {
-      const stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
-      return [
-        'BEGIN:VCALENDAR',
-        'VERSION:2.0',
-        'CALSCALE:GREGORIAN',
-        'METHOD:PUBLISH',
-        'PRODID:-//akira1989720//Fujii Kaze Kaohsiung Countdown//ZH-TW',
-        'BEGIN:VEVENT',
-        `UID:${event.uid}`,
-        `DTSTAMP:${stamp}`,
-        `DTSTART:${event.startUtc}`,
-        `DTEND:${event.endUtc}`,
-        `SUMMARY:${escapeICS(event.summary)}`,
-        `LOCATION:${escapeICS(event.location)}`,
-        `DESCRIPTION:${escapeICS(event.description)}`,
-        'END:VEVENT',
-        'END:VCALENDAR'
-      ].join('\r\n');
-    }
-
-    function downloadCalendar(key) {
-      const event = calendarEvents[key];
-      if (!event) return;
-
-      const blob = new Blob([createICS(event)], { type: 'text/calendar;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const anchor = document.createElement('a');
-      anchor.href = url;
-      anchor.download = event.filename;
-      document.body.appendChild(anchor);
-      anchor.click();
-      anchor.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 1000);
-      document.getElementById('calendarMenu').open = false;
-      showToast(key === 'ticket' ? '已下載公開售票提醒，可開啟檔案加入行事曆。' : '已下載演唱會行程，可開啟檔案加入行事曆。');
-    }
-
-    document.querySelectorAll('[data-calendar-key]').forEach((button) => {
-      button.addEventListener('click', () => downloadCalendar(button.dataset.calendarKey));
+    document.querySelectorAll('[data-calendar-key]').forEach((link) => {
+      link.href = buildGoogleCalendarUrl(calendarEvents[link.dataset.calendarKey]);
+      link.addEventListener('click', () => {
+        document.getElementById('calendarMenu').open = false;
+        showToast('已開啟 Google Calendar，確認後即可新增。');
+      });
     });
 
     document.addEventListener('click', (event) => {
@@ -815,31 +908,44 @@
       if (!copied) throw new Error('Copy command was not available.');
     }
 
-    document.getElementById('shareBtn').addEventListener('click', async () => {
-      const isPublishedPage = /^https?:$/.test(window.location.protocol);
-      const shareText = '藤井風高雄演唱會倒數｜公開售票：2026.06.20 12:00｜演出：2026.10.31 19:00';
-      const shareData = {
-        title: '藤井風高雄演唱會倒數',
-        text: shareText,
-        ...(isPublishedPage ? { url: window.location.href } : {})
-      };
-      const copiedText = isPublishedPage ? `${shareText}\n${window.location.href}` : shareText;
+    const shareModal = document.getElementById('shareModal');
+    const shareUrl = document.getElementById('shareUrl');
+    const lineShareLink = document.getElementById('lineShareLink');
+    const threadsShareLink = document.getElementById('threadsShareLink');
 
+    shareUrl.value = PUBLISHED_URL;
+    lineShareLink.href = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(PUBLISHED_URL)}&text=${encodeURIComponent(SHARE_TEXT)}`;
+    threadsShareLink.href = `https://www.threads.net/intent/post?url=${encodeURIComponent(PUBLISHED_URL)}&text=${encodeURIComponent(SHARE_TEXT)}`;
+
+    function openShareModal() {
+      shareModal.hidden = false;
+      shareUrl.focus();
+      shareUrl.select();
+    }
+
+    function closeShareModal() {
+      shareModal.hidden = true;
+      document.getElementById('shareBtn').focus();
+    }
+
+    document.getElementById('shareBtn').addEventListener('click', openShareModal);
+    document.getElementById('shareClose').addEventListener('click', closeShareModal);
+    shareModal.addEventListener('click', (event) => {
+      if (event.target === shareModal) closeShareModal();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !shareModal.hidden) closeShareModal();
+    });
+
+    document.getElementById('copyUrlBtn').addEventListener('click', async () => {
       try {
-        if (navigator.share && isPublishedPage) {
-          await navigator.share(shareData);
-          showToast('已開啟分享選單。');
-          return;
-        }
-
-        await copyText(copiedText);
-        showToast(isPublishedPage
-          ? '倒數頁網址已複製，可以貼給朋友了。'
-          : '目前是本機預覽：已複製活動資訊。上線後即可分享公開網址。');
+        await copyText(PUBLISHED_URL);
+        showToast('倒數頁網址已複製。');
       } catch (error) {
-        if (error.name !== 'AbortError') {
-          showToast('暫時無法自動分享，請手動複製瀏覽器網址。');
-        }
+        shareUrl.focus();
+        shareUrl.select();
+        showToast('請手動複製已選取的網址。');
       }
     });
   </script>
