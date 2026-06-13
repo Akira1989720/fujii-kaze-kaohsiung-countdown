@@ -1148,6 +1148,13 @@
         </div>
       </details>
       <button class="button button-secondary" type="button" id="shareBtn">一起倒數</button>
+
+      <a
+  class="button button-practice"
+  href="./practice"
+  aria-label="前往搶票手速練習">
+  搶票手速練習
+</a>
     </section>
 
     <section class="details fade-in delay-3">
@@ -1405,7 +1412,7 @@
     document.getElementById('copyUrlBtn').addEventListener('click', async () => {
       try {
         await copyText(PUBLISHED_URL);
-        showToast('倒數頁網址已複製。');
+        showToast('網址已複製。');
       } catch (error) {
         shareUrl.focus();
         shareUrl.select();
