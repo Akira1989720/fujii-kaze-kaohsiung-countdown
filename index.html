@@ -1,49 +1,25 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <title>藤井風高雄演唱會倒數｜Fujii Kaze Prema World Tour</title>
-
-<meta
-  name="description"
-  content="拜託讓我有票。"
-/>
-
-<meta property="og:type" content="website" />
-<meta
-  property="og:url"
-  content="https://akira1989720.github.io/fujii-kaze-kaohsiung-countdown/"
-/>
-<meta
-  property="og:title"
-  content="藤井風高雄演唱會倒數｜Fujii Kaze Prema World Tour"
-/>
-<meta
-  property="og:description"
-  content="拜託讓我有票。"
-/>
-<meta
-  property="og:image"
-  content="https://akira1989720.github.io/fujii-kaze-kaohsiung-countdown/og-preview.jpg"
-/>
-<meta
-  property="og:image:secure_url"
-  content="https://akira1989720.github.io/fujii-kaze-kaohsiung-countdown/og-preview.jpg"
-/>
-<meta property="og:image:type" content="image/jpeg" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta
-  property="og:image:alt"
-  content="藤井風高雄演唱會倒數頁面預覽圖"
-/>
-
-<meta name="twitter:card" content="summary_large_image" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#e6bd74" />
-  <meta name="description" content="2026 藤井風高雄演唱會：公開售票與演出時間雙倒數。" />
   <title>藤井風高雄演唱會倒數｜Fujii Kaze Prema World Tour</title>
-  <!-- revised: golden-hour "Prema" direction + breathing sun-halo signature | 2026-06-13 v6 -->
+  <meta name="description" content="拜託讓我有票。" />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://akira1989720.github.io/fujii-kaze-kaohsiung-countdown/" />
+  <meta property="og:title" content="藤井風高雄演唱會倒數｜Fujii Kaze Prema World Tour" />
+  <meta property="og:description" content="拜託讓我有票。" />
+  <meta property="og:image" content="https://akira1989720.github.io/fujii-kaze-kaohsiung-countdown/og-preview.jpg" />
+  <meta property="og:image:secure_url" content="https://akira1989720.github.io/fujii-kaze-kaohsiung-countdown/og-preview.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="藤井風高雄演唱會倒數頁面預覽圖" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- revised: merged user text/font edits + OG meta | 2026-06-13 v6 -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -110,12 +86,12 @@
     .beam {
       position: absolute;
       top: -24%;
-      width: 40%;
+      width: 38%;
       height: 130%;
-      background: linear-gradient(180deg, rgba(255, 246, 214, 0.55) 0%, rgba(255, 240, 198, 0.12) 46%, transparent 74%);
-      filter: blur(46px);
+      background: linear-gradient(180deg, rgba(255, 247, 216, 0.7) 0%, rgba(255, 240, 198, 0.16) 48%, transparent 76%);
+      filter: blur(40px);
       mix-blend-mode: screen;
-      opacity: 0.42;
+      opacity: 0.5;
     }
 
     .beam-a { left: 2%; transform: rotate(-13deg); transform-origin: top center; animation: beamSwayA 15s ease-in-out infinite; }
@@ -132,13 +108,13 @@
     }
 
     @keyframes beamSwayA {
-      0%, 100% { transform: rotate(-13deg) translateX(0); opacity: 0.34; }
-      50% { transform: rotate(-9deg) translateX(2%); opacity: 0.5; }
+      0%, 100% { transform: rotate(-13deg) translateX(0); opacity: 0.42; }
+      50% { transform: rotate(-9deg) translateX(2%); opacity: 0.6; }
     }
 
     @keyframes beamSwayB {
-      0%, 100% { transform: rotate(13deg) translateX(0); opacity: 0.32; }
-      50% { transform: rotate(9deg) translateX(-2%); opacity: 0.48; }
+      0%, 100% { transform: rotate(13deg) translateX(0); opacity: 0.4; }
+      50% { transform: rotate(9deg) translateX(-2%); opacity: 0.56; }
     }
 
     @keyframes hazeDrift {
@@ -522,6 +498,15 @@
 
     .button-primary:hover { box-shadow: 0 12px 26px rgba(196, 138, 68, 0.4); }
 
+    /* KKTIX brand-green CTA (matches KKTIX's purchase button) */
+    .button-kktix {
+      color: #ffffff;
+      background: linear-gradient(180deg, #56b53a, #3f9a27);
+      box-shadow: 0 8px 20px rgba(63, 154, 39, 0.34);
+    }
+
+    .button-kktix:hover { box-shadow: 0 12px 26px rgba(63, 154, 39, 0.44); }
+
     .button-secondary,
     .calendar-summary {
       color: var(--earth);
@@ -659,6 +644,189 @@
 
     .tip strong { color: var(--ember); }
 
+    .tip-list {
+      display: grid;
+      gap: 0.52rem;
+      margin: 0.9rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tip-list li {
+      display: block;
+      position: relative;
+      padding-left: 1.15rem;
+      color: var(--earth-2);
+      font-family: var(--sans);
+      font-size: 0.83rem;
+      line-height: 1.68;
+    }
+
+    .tip-list li::before {
+      content: "";
+      position: absolute;
+      left: 0.08rem;
+      top: 0.62em;
+      width: 0.34rem;
+      height: 0.34rem;
+      border-radius: 50%;
+      background: var(--rose);
+    }
+
+    .tip-list li strong { color: var(--earth); font-weight: 600; }
+
+    .tip-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: 1rem;
+      padding-bottom: 1px;
+      border-bottom: 1px solid var(--line-gold);
+      color: var(--ember);
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      transition: color 160ms ease, border-color 160ms ease;
+    }
+
+    .tip-more:hover { color: var(--amber); border-color: var(--amber); }
+
+    .tip-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.7rem 1rem;
+      margin-top: 1rem;
+    }
+
+    .tip-map-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.52rem 0.82rem;
+      border: 1px solid var(--line-gold);
+      border-radius: 0.55rem;
+      background: rgba(245, 227, 198, 0.42);
+      color: var(--earth);
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      cursor: pointer;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .tip-map-btn:hover { transform: translateY(-1px); border-color: var(--amber); background: rgba(237, 202, 133, 0.32); }
+    .tip-actions .tip-more { margin-top: 0; }
+
+    /* Seat-map lightbox */
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+      overflow-y: auto;
+      background: rgba(40, 28, 18, 0.62);
+      backdrop-filter: blur(8px);
+    }
+
+    .lightbox-overlay[hidden] { display: none; }
+
+    .lightbox-dialog {
+      position: relative;
+      width: min(47rem, 100%);
+      margin: auto;
+      padding: 1.45rem;
+      border: 1px solid var(--line-gold);
+      border-radius: 1.1rem;
+      background:
+        radial-gradient(120% 60% at 0% 0%, var(--paper-glow), transparent 58%),
+        var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .lightbox-dialog h2 {
+      margin: 0.36rem 0 0;
+      color: var(--earth);
+      font-family: var(--sans);
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .seat-map-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 1rem 0 0;
+      border: 1px solid var(--line-gold);
+      border-radius: 0.7rem;
+      background: #000;
+    }
+
+    .rv-list {
+      display: grid;
+      gap: 0.6rem;
+      margin: 1.05rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .rv-item {
+      display: grid;
+      grid-template-columns: 6.6rem 1fr;
+      gap: 0.7rem;
+      align-items: start;
+    }
+
+    .rv-tier {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.42rem;
+      color: var(--earth);
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .rv-dot {
+      width: 0.85rem;
+      height: 0.85rem;
+      border-radius: 0.24rem;
+      flex: none;
+    }
+
+    .rv-3800 { background: #b88a8c; }
+    .rv-2800 { background: #c2705c; }
+    .rv-1800 { background: #7c7088; }
+
+    .rv-codes {
+      color: var(--earth-2);
+      font-family: var(--sans);
+      font-size: 0.83rem;
+      letter-spacing: 0.02em;
+      line-height: 1.7;
+    }
+
+    .rv-note {
+      margin: 1.1rem 0 0;
+      padding-top: 0.95rem;
+      border-top: 1px solid var(--line);
+      color: var(--earth-3);
+      font-family: var(--sans);
+      font-size: 0.76rem;
+      letter-spacing: 0.01em;
+      line-height: 1.7;
+    }
+
+    .rv-note a { color: var(--ember); text-decoration: none; border-bottom: 1px solid var(--line-gold); }
+    .rv-note a:hover { color: var(--amber); border-color: var(--amber); }
+
     /* ───────── Share modal ───────── */
     .share-overlay {
       position: fixed;
@@ -727,10 +895,10 @@
     .share-description {
       margin: 0.7rem 0 1rem;
       color: var(--earth-2);
+      font-family: var(--sans);
+      font-weight: 400;
       font-size: 0.88rem;
       line-height: 1.8;
-      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
-      font-weight: 400;
     }
 
     .share-url-row {
@@ -798,6 +966,15 @@
       letter-spacing: 0.05em;
     }
 
+    footer a {
+      color: var(--ember);
+      text-decoration: none;
+      border-bottom: 1px solid var(--line-gold);
+      transition: color 160ms ease, border-color 160ms ease;
+    }
+
+    footer a:hover { color: var(--amber); border-color: var(--amber); }
+
     /* ───────── Toast ───────── */
     .toast {
       position: fixed;
@@ -852,6 +1029,7 @@
       .halo-ring { display: none; }
       .title-main { animation: none; background-position: 0% 0; }
       .gold-dust { animation: none; }
+      .beam, .haze { animation: none; }
       html { scroll-behavior: auto; }
       * { transition-duration: 0.01ms !important; }
     }
@@ -887,6 +1065,11 @@
   </style>
 </head>
 <body>
+  <div class="atmosphere" aria-hidden="true">
+    <span class="beam beam-a"></span>
+    <span class="beam beam-b"></span>
+    <span class="haze"></span>
+  </div>
   <main>
     <header class="topbar fade-in">
       <span>Fujii Kaze · Prema World Tour</span>
@@ -949,7 +1132,7 @@
     </section>
 
     <section class="action-panel fade-in delay-3" aria-label="相關功能與連結">
-      <a class="button button-primary" href="https://kktix.com/events/34473ba4/registrations/new" target="_blank" rel="noopener noreferrer">前往 KKTIX 搶票</a>
+      <a class="button button-kktix" href="https://kktix.com/events/34473ba4/registrations/new" target="_blank" rel="noopener noreferrer">前往 KKTIX 搶票</a>
       <a class="button button-secondary" href="https://kklivetw.kktix.cc/events/34473ba4" target="_blank" rel="noopener noreferrer">查看官方節目資訊</a>
       <details class="calendar-wrap" id="calendarMenu">
         <summary class="calendar-summary">加入Google行事曆</summary>
@@ -980,19 +1163,53 @@
       <article class="detail-card wind-card">
         <h3>Before The Wind Arrives<span>不要忘記！</span></h3>
         <p class="tip"><strong>搶票提醒：</strong>先完成 KKTIX 會員、手機號碼與電子郵件驗證。啟售當天不建議同時開啟多個裝置、瀏覽器或分頁，以免購票流程異常。</p>
+        <ul class="tip-list">
+          <li>聯絡信箱避免用 <strong>Yahoo / Hotmail</strong>（易擋信或進垃圾信），改用 Gmail，以免漏接訂單成立通知信。</li>
+          <li>信用卡先備妥並確認支援 <strong>3D 驗證</strong>，結帳會收簡訊驗證碼，手機請放手邊。</li>
+          <li>官網採<strong>電腦自動配位</strong>，不能選區、選位——先排好「票價」順位即可。若配到<strong>視線遮蔽區</strong>，只能在結帳前放棄重抽；一旦結帳，即不得以視線遮蔽為由退票或換位。</li>
+          <li>顯示售完先別關頁面，<strong>逾時未付款的票會陸續釋回</strong>，可留意撿回流票。</li>
+        </ul>
+        <div class="tip-actions">
+          <button class="tip-map-btn" type="button" id="seatMapBtn">查看視線遮蔽座位圖</button>
+          <a class="tip-more" href="https://kklivetw.kktix.cc/events/34473ba4" target="_blank" rel="noopener noreferrer">完整購票須知（KKLIVE 官方）</a>
+        </div>
       </article>
     </section>
 
     <footer>
       <div>
         <span>Unofficial countdown page · Event information linked to KKLIVE / KKTIX</span>
-        <span class="copyright">copyright / akira1989720 · v6  <a href="mailto:akira1989720@gmail.com">Email</a> </span>
+        <span class="copyright">copyright / akira1989720 · v6  <a href="mailto:akira1989720@gmail.com">Email</a></span>
       </div>
       <span id="updatedAt"></span>
     </footer>
   </main>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <div class="lightbox-overlay" id="seatMapModal" hidden>
+    <section class="lightbox-dialog" role="dialog" aria-modal="true" aria-labelledby="seatMapTitle">
+      <button class="share-close" type="button" id="seatMapClose" aria-label="關閉座位圖">×</button>
+      <p class="share-kicker">Restricted View</p>
+      <h2 id="seatMapTitle">視線遮蔽座位圖</h2>
+      <img class="seat-map-img" src="seat-map.jpg" alt="高雄國家體育場座位圖，依票價分區並標示視線遮蔽區段" loading="lazy" />
+      <ul class="rv-list">
+        <li class="rv-item">
+          <span class="rv-tier"><span class="rv-dot rv-3800"></span>NT$3,800</span>
+          <span class="rv-codes">C07 C08 C09 C10 · G02 G03 G04 G05 · V08 V09 V10</span>
+        </li>
+        <li class="rv-item">
+          <span class="rv-tier"><span class="rv-dot rv-2800"></span>NT$2,800</span>
+          <span class="rv-codes">E02 E03 E04 · E12 E13 E14 · C22 C23 C24 C25 · D06 · F07 · G14 G15 G16 G17</span>
+        </li>
+        <li class="rv-item">
+          <span class="rv-tier"><span class="rv-dot rv-1800"></span>NT$1,800</span>
+          <span class="rv-codes">E19 E20 E21 · E28 E29 E30</span>
+        </li>
+      </ul>
+      <p class="rv-note">座位圖為官方公布版本；視線遮蔽區整理感謝 <a href="https://www.threads.com/@fujiikaze.taiwan.fans" target="_blank" rel="noopener noreferrer">@fujiikaze.taiwan.fans</a>。系統配位若落在上述區段，結帳前可選擇放棄重抽；一旦結帳，恕不接受以視線遮蔽為由退票或換位。</p>
+    </section>
+  </div>
 
   <div class="share-overlay" id="shareModal" hidden>
     <section class="share-dialog" role="dialog" aria-modal="true" aria-labelledby="shareTitle">
@@ -1132,6 +1349,28 @@
       input.remove();
       if (!copied) throw new Error('Copy command was not available.');
     }
+
+    const seatMapModal = document.getElementById('seatMapModal');
+    const seatMapBtn = document.getElementById('seatMapBtn');
+
+    function openSeatMap() {
+      seatMapModal.hidden = false;
+      document.getElementById('seatMapClose').focus();
+    }
+
+    function closeSeatMap() {
+      seatMapModal.hidden = true;
+      seatMapBtn.focus();
+    }
+
+    seatMapBtn.addEventListener('click', openSeatMap);
+    document.getElementById('seatMapClose').addEventListener('click', closeSeatMap);
+    seatMapModal.addEventListener('click', (event) => {
+      if (event.target === seatMapModal) closeSeatMap();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !seatMapModal.hidden) closeSeatMap();
+    });
 
     const shareModal = document.getElementById('shareModal');
     const shareUrl = document.getElementById('shareUrl');
