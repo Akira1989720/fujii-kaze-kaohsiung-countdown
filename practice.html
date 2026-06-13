@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#e6bd74" />
+  <title>搶票手速練習｜藤井風高雄演唱會</title>
+  <meta name="description" content="6/20 中午開賣前先練手速：啟售倒數，開賣瞬間快點座位區，看看你有多快。" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://akira1989720.github.io/fujii-kaze-kaohsiung-countdown/practice.html" />
+  <meta property="og:title" content="搶票手速練習｜藤井風高雄演唱會" />
+  <meta property="og:description" content="不要輸給黃牛，提高你的手速到 SS，成為搶票戰士！" />
+  <meta property="og:image" content="https://akira1989720.github.io/fujii-kaze-kaohsiung-countdown/og-preview.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #fcf5e6;
+      --paper-glow: #fffaf0;
+      --halo: #edca85;
+      --sun: #dba455;
+      --amber: #c5853f;
+      --ember: #bd6446;
+      --rose: #c87c5f;
+      --earth: #49321f;
+      --earth-2: rgba(73, 50, 31, 0.74);
+      --earth-3: rgba(73, 50, 31, 0.6);
+      --leaf: #6c6950;
+      --line: rgba(120, 80, 52, 0.16);
+      --line-gold: rgba(193, 140, 70, 0.32);
+      --kk-a: #56b53a;
+      --kk-b: #3f9a27;
+      --shadow: 0 22px 54px rgba(96, 60, 32, 0.16);
+      --shadow-soft: 0 12px 34px rgba(96, 60, 32, 0.1);
+      --serif: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+      --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", "Helvetica Neue", Arial, sans-serif;
+      --util: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--earth);
+      font-family: var(--serif);
+      background:
+        radial-gradient(ellipse 64% 46% at 50% 2%, rgba(255, 249, 226, 0.95), transparent 62%),
+        radial-gradient(circle at 50% 18%, rgba(237, 202, 133, 0.45), transparent 46%),
+        linear-gradient(180deg, #f2d695 0%, #e8c079 34%, #dba85b 70%, #cc9149 100%);
+    }
+
+    main {
+      width: min(680px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 1.6rem 0 2.4rem;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(80, 56, 44, 0.2);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--earth-2);
+      font-family: var(--util);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color 160ms ease;
+    }
+
+    .back-link:hover { color: var(--ember); }
+
+    .topbar-tag {
+      color: var(--earth-3);
+      font-family: var(--util);
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    header.hero { padding: 2.2rem 0 1.5rem; }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin: 0 0 0.9rem;
+      color: var(--ember);
+      font-family: var(--util);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 2.2rem;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--amber));
+    }
+
+    h1 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 7vw, 3.7rem);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.05;
+      color: var(--earth);
+    }
+
+    .hero-sub {
+      margin: 0.85rem 0 0;
+      color: var(--earth-2);
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+
+    /* ── Game stage ── */
+    .stage {
+      position: relative;
+      margin-top: 1.4rem;
+      padding: clamp(1.6rem, 4vw, 2.4rem);
+      border: 1px solid var(--line-gold);
+      border-radius: 1.3rem;
+      background:
+        radial-gradient(120% 80% at 0% 0%, var(--paper-glow), transparent 56%),
+        var(--paper);
+      box-shadow: 0 12px 30px rgba(96, 60, 32, 0.1);
+      font-family: var(--sans);
+      text-align: center;
+    }
+
+    .banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-family: var(--util);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: background 200ms ease, color 200ms ease;
+    }
+
+    .banner-dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: currentColor; }
+    .banner.is-locked { background: rgba(120, 80, 52, 0.12); color: var(--earth-3); }
+    .banner.is-arming { background: rgba(197, 133, 63, 0.16); color: var(--amber); }
+    .banner.is-arming .banner-dot { animation: blink 0.5s steps(2) infinite; }
+    .banner.is-open { background: linear-gradient(180deg, var(--kk-a), var(--kk-b)); color: #fff; }
+    .banner.is-open .banner-dot { animation: blink 0.6s steps(2) infinite; }
+
+    @keyframes blink { 50% { opacity: 0.25; } }
+
+    .bignum {
+      margin: 1.1rem 0 0.3rem;
+      font-family: var(--util);
+      font-size: clamp(4rem, 16vw, 7rem);
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--earth);
+    }
+
+    .bignum.go {
+      background: linear-gradient(180deg, var(--kk-a), var(--kk-b));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .stage-hint {
+      margin: 0.2rem 0 0;
+      min-height: 1.4rem;
+      color: var(--earth-2);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* ── Zone grid ── */
+    .zone-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0.5rem;
+      margin: 1.4rem 0 0;
+    }
+
+    .zone {
+      position: relative;
+      padding: 1rem 0.45rem;
+      border: 1.5px solid var(--line-gold);
+      border-radius: 0.85rem;
+      background: rgba(245, 227, 198, 0.5);
+      color: var(--earth);
+      font-family: var(--sans);
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      cursor: not-allowed;
+      opacity: 0.55;
+      filter: grayscale(0.5);
+      transition: transform 120ms ease, box-shadow 160ms ease, opacity 200ms ease, filter 200ms ease, border-color 160ms ease;
+    }
+
+    .zone::before {
+      content: "";
+      position: absolute;
+      left: 0.5rem;
+      top: 0.55rem;
+      width: 0.46rem;
+      height: 0.46rem;
+      border-radius: 0.16rem;
+      background: var(--zone, var(--amber));
+    }
+
+    .zone.live {
+      cursor: pointer;
+      opacity: 1;
+      filter: none;
+      border-color: var(--kk-a);
+      box-shadow: 0 6px 16px rgba(63, 154, 39, 0.18);
+    }
+
+    .zone.live:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(63, 154, 39, 0.26); }
+    .zone.live:active { transform: translateY(0); }
+
+    .z-5800 { --zone: #d3a15a; }
+    .z-4800 { --zone: #cf804c; }
+    .z-3800 { --zone: #b88a8c; }
+    .z-2800 { --zone: #c2705c; }
+    .z-1800 { --zone: #7c7088; }
+
+    /* ── Loading ── */
+    .loading { margin: 1.6rem 0 0.4rem; }
+    .loading[hidden] { display: none; }
+
+    .spinner {
+      width: 3.2rem;
+      height: 3.2rem;
+      margin: 0 auto;
+      border-radius: 50%;
+      border: 3px solid var(--line-gold);
+      border-top-color: var(--amber);
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .loading-text {
+      margin: 1.1rem 0 0;
+      font-family: var(--sans);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--earth);
+    }
+
+    .loading-sub { margin: 0.45rem 0 0; color: var(--earth-3); font-size: 0.85rem; line-height: 1.6; }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      min-height: 3rem;
+      margin-top: 1.4rem;
+      padding: 0.7rem 1.8rem;
+      border: 1px solid transparent;
+      border-radius: 0.7rem;
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .btn-go {
+      color: #fff;
+      background: linear-gradient(180deg, var(--kk-a), var(--kk-b));
+      box-shadow: 0 8px 20px rgba(63, 154, 39, 0.32);
+    }
+
+    .btn-go:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(63, 154, 39, 0.42); }
+
+    .btn-retry {
+      color: var(--earth);
+      border-color: var(--line-gold);
+      background: rgba(245, 227, 198, 0.5);
+    }
+
+    .btn-retry:hover { transform: translateY(-2px); border-color: var(--amber); }
+
+    /* ── Result ── */
+    .result { margin-top: 0.4rem; }
+    .result[hidden] { display: none; }
+
+    .result-rank {
+      display: inline-grid;
+      place-items: center;
+      width: 4.6rem;
+      height: 4.6rem;
+      margin: 0.4rem auto 0;
+      border-radius: 50%;
+      font-family: var(--util);
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: #fff;
+    }
+
+    .rank-SS { background: linear-gradient(160deg, #b94a3a, #7d2c22); box-shadow: 0 0 0 4px rgba(185,74,58,0.18); }
+    .rank-S  { background: linear-gradient(160deg, #d9a23f, #b97e2c); box-shadow: 0 0 0 4px rgba(217,162,63,0.18); }
+    .rank-A  { background: linear-gradient(160deg, #c2705c, #9c4f3f); }
+    .rank-B  { background: linear-gradient(160deg, #6c6950, #4f4d3a); }
+    .rank-C  { background: linear-gradient(160deg, #7c7088, #564f63); }
+    .rank-fail { background: linear-gradient(160deg, #6b5142, #463329); }
+
+    .result-title {
+      margin: 0.7rem 0 0;
+      font-family: var(--sans);
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--earth);
+    }
+
+    .result-time {
+      margin: 0.45rem 0 0;
+      font-family: var(--util);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ember);
+      letter-spacing: 0.02em;
+    }
+
+    .result-best { margin: 0.7rem 0 0; color: var(--earth-3); font-size: 0.82rem; letter-spacing: 0.02em; }
+
+    /* ── Best record ── */
+    .record {
+      margin-top: 1.1rem;
+      padding: 1.2rem 1.4rem;
+      border: 1px solid var(--line-gold);
+      border-radius: 1.1rem;
+      background: var(--paper);
+      box-shadow: 0 8px 22px rgba(96, 60, 32, 0.08);
+      font-family: var(--sans);
+      text-align: center;
+    }
+
+    .record-head { display: flex; flex-direction: column; align-items: center; gap: 0.28rem; }
+
+    .record-label {
+      color: var(--ember);
+      font-family: var(--util);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .record-value {
+      color: var(--earth);
+      font-family: var(--util);
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .record-value .record-unit { font-size: 0.92rem; font-weight: 600; }
+
+    .record-share {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 0.9rem;
+      padding-top: 0.9rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .record-share[hidden] { display: none; }
+    .record-share-label { color: var(--earth-2); font-size: 0.82rem; }
+
+    .record-btn {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.4rem;
+      padding: 0.45rem 1.05rem;
+      border: 1px solid var(--line-gold);
+      border-radius: 0.55rem;
+      background: rgba(245, 227, 198, 0.5);
+      color: var(--earth);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .record-btn:hover { transform: translateY(-2px); border-color: var(--amber); background: rgba(237, 202, 133, 0.32); }
+
+    footer {
+      margin-top: 1.4rem;
+      color: var(--earth-3);
+      font-family: var(--util);
+      font-size: 0.64rem;
+      letter-spacing: 0.06em;
+      line-height: 1.85;
+      text-align: center;
+    }
+
+    footer span { display: block; }
+    .copyright { margin-top: 0.2rem; }
+    footer a { color: var(--ember); text-decoration: none; border-bottom: 1px solid var(--line-gold); }
+    footer a:hover { color: var(--amber); border-color: var(--amber); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .banner-dot { animation: none !important; }
+      .spinner { animation-duration: 1.6s; }
+      * { transition-duration: 0.01ms !important; }
+    }
+
+    @media (max-width: 520px) {
+      .zone-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="topbar">
+      <a class="back-link" href="./">← 回倒數頁</a>
+      <span class="topbar-tag">Ticket Rush Trainer</span>
+    </header>
+
+    <header class="hero">
+      <p class="eyebrow">Practice Mode</p>
+      <h1>搶票手速練習</h1>
+      <p class="hero-sub">我們不是抱著黃牛的心情在搶票的。<br />不要輸給黃牛，提高你的手速到 SS，成為搶票戰士！</p>
+    </header>
+
+    <section class="stage" aria-label="搶票練習區">
+      <div class="banner is-locked" id="banner"><span class="banner-dot"></span><span id="bannerText">尚未開賣</span></div>
+      <div class="bignum" id="bignum">10</div>
+      <p class="stage-hint" id="hint">按「開始練習」進入啟售倒數。</p>
+
+      <div class="zone-grid" id="zoneGrid" aria-label="座位區（開賣後可點選）"></div>
+
+      <div class="loading" id="loading" hidden>
+        <div class="spinner" aria-hidden="true"></div>
+        <p class="loading-text" id="loadingText">訂單處理中…</p>
+        <p class="loading-sub">系統正在判定你是否搶到，請勿關閉頁面</p>
+      </div>
+
+      <button class="btn btn-go" id="startBtn" type="button">開始練習</button>
+
+      <div class="result" id="result" hidden>
+        <div class="result-rank" id="resultRank"></div>
+        <h2 class="result-title" id="resultTitle"></h2>
+        <p class="result-time" id="resultTime"></p>
+        <p class="result-best" id="resultBest"></p>
+        <button class="btn btn-retry" id="retryBtn" type="button">再試一次</button>
+      </div>
+    </section>
+
+    <section class="record" aria-label="最快手速紀錄">
+      <div class="record-head">
+        <span class="record-label">⚡ 目前最快手速紀錄</span>
+        <span class="record-value" id="recordValue">尚無紀錄，快來挑戰！</span>
+      </div>
+      <div class="record-share" id="recordShare" hidden>
+        <span class="record-share-label">挑戰朋友：</span>
+        <a class="record-btn" id="recShareLine" href="#" target="_blank" rel="noopener noreferrer">分享到 LINE</a>
+        <a class="record-btn" id="recShareThreads" href="#" target="_blank" rel="noopener noreferrer">分享到 Threads</a>
+      </div>
+    </section>
+
+    <footer>
+      <span>純練習用途 · 與真實 KKTIX 售票無關</span>
+      <span>Unofficial countdown page · Event information linked to KKLIVE / KKTIX</span>
+      <span class="copyright">copyright / akira1989720 · v6  <a href="mailto:akira1989720@gmail.com">Email</a></span>
+    </footer>
+  </main>
+
+  <script>
+    const ZONES = [
+      { label: 'NT$5,800', cls: 'z-5800' },
+      { label: 'NT$4,800', cls: 'z-4800' },
+      { label: 'NT$3,800', cls: 'z-3800' },
+      { label: 'NT$2,800', cls: 'z-2800' },
+      { label: 'NT$1,800', cls: 'z-1800' }
+    ];
+
+    const SOLD_OUT_MS = 1200;
+
+    const PRACTICE_URL = 'https://akira1989720.github.io/fujii-kaze-kaohsiung-countdown/practice.html';
+    const BEST_KEY = 'fkz-practice-best';
+
+    const ARM_MSGS = ['連線中…', '伺服器忙線…', '排隊等待中…', '重新連線…', '快了…'];
+    const LOAD_MSGS = ['訂單處理中…', '確認座位中…', '處理付款資訊…', '系統忙線，請稍候…', '別關頁面，馬上好…'];
+
+    // Randomised "network" feel: sometimes instant, sometimes congested.
+    function armingDelay() {
+      const r = Math.random();
+      if (r < 0.35) return 120 + Math.random() * 330;    // 順暢 0.12–0.45s
+      if (r < 0.80) return 600 + Math.random() * 1200;   // 普通 0.6–1.8s
+      return 2000 + Math.random() * 2500;                // 塞車 2.0–4.5s
+    }
+
+    // Suspense wait before revealing the outcome.
+    function loadingDelay() {
+      return 3000 + Math.random() * 12000;               // 3–15s
+    }
+
+    const GRADES = [
+      { max: 250,  rank: 'SS', cls: 'rank-SS', msg: '你是搶票外掛程式吧', failChance: 0 },
+      { max: 450,  rank: 'S',  cls: 'rank-S',  msg: '祝搶票日你也有這樣的絕佳表現', failChance: 0.03 },
+      { max: 700,  rank: 'A',  cls: 'rank-A',  msg: '老粉穩穩拿就好', failChance: 0.08 },
+      { max: 950,  rank: 'B',  cls: 'rank-B',  msg: '有搶到就好', failChance: 0.18 },
+      { max: 1200, rank: 'C',  cls: 'rank-C',  msg: 'Buzzer Beater!!', failChance: 0.30 }
+    ];
+
+    const banner = document.getElementById('banner');
+    const bannerText = document.getElementById('bannerText');
+    const bignum = document.getElementById('bignum');
+    const hint = document.getElementById('hint');
+    const zoneGrid = document.getElementById('zoneGrid');
+    const loading = document.getElementById('loading');
+    const loadingText = document.getElementById('loadingText');
+    const startBtn = document.getElementById('startBtn');
+    const result = document.getElementById('result');
+    const resultRank = document.getElementById('resultRank');
+    const resultTitle = document.getElementById('resultTitle');
+    const resultTime = document.getElementById('resultTime');
+    const resultBest = document.getElementById('resultBest');
+    const retryBtn = document.getElementById('retryBtn');
+    const recordValue = document.getElementById('recordValue');
+    const recordShare = document.getElementById('recordShare');
+    const recShareLine = document.getElementById('recShareLine');
+    const recShareThreads = document.getElementById('recShareThreads');
+
+    let state = 'idle';
+    let openTime = 0;
+    let bestMs = null;
+    let tCountdown = null, tArm = null, tSold = null, tLoad = null, tMsg = null;
+
+    function clearAll() {
+      clearInterval(tCountdown);
+      clearTimeout(tArm);
+      clearTimeout(tSold);
+      clearTimeout(tLoad);
+      clearInterval(tMsg);
+    }
+
+    function setBanner(mode, text) {
+      banner.className = 'banner is-' + mode;
+      bannerText.textContent = text;
+    }
+
+    function renderZones() {
+      zoneGrid.innerHTML = '';
+      ZONES.forEach((z) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'zone ' + z.cls;
+        b.textContent = z.label;
+        b.addEventListener('click', () => onZoneClick(z.label));
+        zoneGrid.appendChild(b);
+      });
+    }
+
+    function start() {
+      clearAll();
+      state = 'countdown';
+      result.hidden = true;
+      loading.hidden = true;
+      startBtn.style.display = 'none';
+      zoneGrid.style.display = 'grid';
+      bignum.style.display = 'block';
+      renderZones();
+      setBanner('locked', '尚未開賣');
+      bignum.className = 'bignum';
+      hint.textContent = '盯緊倒數…開賣瞬間立刻點任一座位區！';
+
+      let n = 10;
+      bignum.textContent = n;
+      tCountdown = setInterval(() => {
+        n -= 1;
+        if (n > 0) {
+          bignum.textContent = n;
+        } else {
+          clearInterval(tCountdown);
+          arm();
+        }
+      }, 1000);
+    }
+
+    function arm() {
+      state = 'arming';
+      bignum.textContent = '啟售';
+      setBanner('arming', ARM_MSGS[0]);
+      hint.textContent = '別急…還沒真的開！太早點會被擋下。';
+      let i = 0;
+      tMsg = setInterval(() => {
+        i = (i + 1) % ARM_MSGS.length;
+        bannerText.textContent = ARM_MSGS[i];
+      }, 480);
+      tArm = setTimeout(open, armingDelay());
+    }
+
+    function open() {
+      clearInterval(tMsg);
+      state = 'open';
+      openTime = performance.now();
+      bignum.textContent = 'GO';
+      bignum.className = 'bignum go';
+      setBanner('open', '開賣中！快選區域');
+      hint.textContent = '點下去！';
+      zoneGrid.querySelectorAll('.zone').forEach((z) => z.classList.add('live'));
+      tSold = setTimeout(() => {
+        if (state === 'open') finish({ fail: 'soldout' });
+      }, SOLD_OUT_MS);
+    }
+
+    function onZoneClick(label) {
+      if (state === 'countdown' || state === 'arming') {
+        finish({ fail: 'jump' });
+        return;
+      }
+      if (state === 'open') {
+        const ms = performance.now() - openTime;
+        goLoading(ms, label);
+      }
+    }
+
+    function goLoading(ms, label) {
+      state = 'loading';
+      clearTimeout(tSold);
+      zoneGrid.style.display = 'none';
+      bignum.style.display = 'none';
+      hint.textContent = '';
+      setBanner('arming', '處理中…');
+      loading.hidden = false;
+
+      let i = 0;
+      loadingText.textContent = LOAD_MSGS[0];
+      tMsg = setInterval(() => {
+        i = (i + 1) % LOAD_MSGS.length;
+        loadingText.textContent = LOAD_MSGS[i];
+      }, 1600);
+
+      tLoad = setTimeout(() => {
+        clearInterval(tMsg);
+        const g = gradeFor(ms);
+        if (Math.random() < g.failChance) {
+          finish({ fail: 'checkout', ms });
+        } else {
+          finish({ ms, label });
+        }
+      }, loadingDelay());
+    }
+
+    function gradeFor(ms) {
+      return GRADES.find((g) => ms <= g.max) || GRADES[GRADES.length - 1];
+    }
+
+    function loadBest() {
+      try {
+        const v = localStorage.getItem(BEST_KEY);
+        if (v !== null) bestMs = parseFloat(v);
+      } catch (e) { /* storage unavailable — fall back to session memory */ }
+    }
+
+    function saveBest() {
+      try { localStorage.setItem(BEST_KEY, String(bestMs)); } catch (e) { /* ignore */ }
+    }
+
+    function renderRecord() {
+      if (bestMs === null) {
+        recordValue.textContent = '尚無紀錄，快來挑戰！';
+        recordShare.hidden = true;
+        return;
+      }
+      const g = gradeFor(bestMs);
+      const sec = (bestMs / 1000).toFixed(3);
+      recordValue.innerHTML = sec + ' <span class="record-unit">秒</span> · ' + g.rank + ' 級';
+      const text = '我在「藤井風搶票手速練習」最快 ' + sec + ' 秒（' + g.rank + ' 級）！換你來挑戰，看能不能比我快 →';
+      const u = encodeURIComponent(PRACTICE_URL);
+      const t = encodeURIComponent(text);
+      recShareLine.href = 'https://social-plugins.line.me/lineit/share?url=' + u + '&text=' + t;
+      recShareThreads.href = 'https://www.threads.net/intent/post?url=' + u + '&text=' + t;
+      recordShare.hidden = false;
+    }
+
+    function finish(outcome) {
+      state = 'done';
+      clearAll();
+      loading.hidden = true;
+      bignum.style.display = 'block';
+      zoneGrid.style.display = 'none';
+
+      if (outcome.fail === 'jump') {
+        showResult('rank-fail', '✕', '偷跑被擋！', '', '系統還沒開賣你就先點了。穩住，等它變綠再出手。', false);
+        return;
+      }
+      if (outcome.fail === 'soldout') {
+        showResult('rank-fail', '✕', '售完，回去再練練手速吧！', '', '', false);
+        return;
+      }
+      if (outcome.fail === 'checkout') {
+        const lostSec = (outcome.ms / 1000).toFixed(3);
+        showResult('rank-fail', '✕', '結帳時被搶走了…', '你的手速 ' + lostSec + ' 秒', '搶進去了，但結帳慢了半拍，位置被別人捷足先登。手速再快，被搶走的機率就更低！', false);
+        return;
+      }
+
+      const ms = outcome.ms;
+      const g = gradeFor(ms);
+      const sec = (ms / 1000).toFixed(3);
+      let best;
+      if (bestMs === null || ms < bestMs) {
+        bestMs = ms;
+        saveBest();
+        best = '🏆 本次刷新最佳紀錄！';
+      } else {
+        best = '本次最佳：' + (bestMs / 1000).toFixed(3) + ' 秒';
+      }
+      renderRecord();
+      showResult(g.cls, g.rank, g.msg, '搶到 ' + outcome.label + ' 區 · 用時 ' + sec + ' 秒', best, true);
+    }
+
+    function showResult(rankCls, rankText, title, timeText, best, success) {
+      resultRank.className = 'result-rank ' + rankCls;
+      resultRank.textContent = rankText;
+      resultTitle.textContent = title;
+      resultTime.textContent = timeText || '';
+      resultTime.style.display = timeText ? 'block' : 'none';
+      resultBest.textContent = best || '';
+      resultBest.style.display = best ? 'block' : 'none';
+      result.hidden = false;
+      bignum.className = 'bignum';
+      bignum.style.display = 'none';
+      setBanner(success ? 'open' : 'locked', success ? '搶票成功' : '練習結束');
+      hint.textContent = '';
+    }
+
+    startBtn.addEventListener('click', start);
+    retryBtn.addEventListener('click', start);
+
+    renderZones();
+    loadBest();
+    renderRecord();
+  </script>
+</body>
+</html>
